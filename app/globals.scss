@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+}
+
+$lightBlue: #25a0db;
+$blue: #1c79bf;
+$green: #7abf48;
+
+@mixin textGradient($deg, $colors...) {
+	background-color: nth($colors, 1);
+	background-image: linear-gradient($deg, $colors);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@mixin borderGradient($deg, $colors...) {
+	border-color: nth($colors, 1);
+	border-image-slice: 1;
+	border-image-source: linear-gradient($deg, $colors);
+}
+
+html {
+	font-size: calc(0.6vmax + 7px);
+}
+
+main {
+	width: 100vw;
+	height: 100vh;
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+canvas {
+	border-top: solid 2px black;
+	border-bottom: solid 2px black;
+
+	@include borderGradient(90deg, $lightBlue, $blue, $green);
+}
+
+footer {
+	width: 100%;
+	text-align: center;
+	font-size: 0.75rem;
+
+	position: absolute;
+	bottom: 10px;
+
+	& > a {
+		font-weight: bold;
+		text-decoration: underline;
+	}
+
+	@include textGradient(90deg, $lightBlue, $blue);
+}

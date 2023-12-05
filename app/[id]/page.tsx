@@ -19,7 +19,11 @@ const Page = async ({params}: {params: {id: number}}) => {
 	const skin: string | undefined = await getSkinData(params.id)
 
 	if (skin === undefined) {
-		return <h1>Skin Not Found</h1>
+		return (
+			<main>
+				<h1>Skin Not Found</h1>
+			</main>
+		)
 	}
 
 	return (

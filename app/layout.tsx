@@ -28,8 +28,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 			<body className={inter.className}>
 				{children}
 				<footer>
-					Skin Viewer API for KSKinCreator <b>KPG-TB</b> 2023 &copy;
-					Licensed under{" "}
+					Skin Viewer API for KSKinCreator <b>KPG-TB</b> 2023 -{" "}
+					{new Date().getFullYear()} &copy; Licensed under{" "}
 					<a href="https://github.com/KPGTB/skin.kpgtb.pl/blob/main/LICENSE">
 						Apache 2.0
 					</a>
